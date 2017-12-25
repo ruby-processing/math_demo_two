@@ -88,13 +88,15 @@ def key_pressed
     @corner = @mesh.before(@corner)
   when 'o'
     @corner = @mesh.opposite(@corner)
+  when 'q', 'Q'
+    Processing.app.exit
   end
-end
+  end
 
 def mouse_pressed
   mouse_point = Point.new(mouse_x, mouse_y)
   @point = polygon.closest_point(mouse_point, 4)
-  if key_pressed? and key == ?d and @point.nil?
+  if key_pressed? and key == 'd' and @point.nil?
     closest = polygon.closest(mouse_point)
     index = polygon.vertices.index(closest)
     polygon.vertices.insert(index + 1, mouse_point)
@@ -132,7 +134,7 @@ end
 def show_help
   @line = 1
   fill(color(0, 0, 128))
-  scribe('Project 5 (Bulge) by Brandon Whitehead')
+  scribe('Press q or Q to quit')
   scribe('')
   scribe('To insert a point hold d and click in/on the polygon')
   scribe('To modify vertex count press < or >')
@@ -296,6 +298,7 @@ def draw_mesh
     maxn = normals.max * 1.2
   end
   @mesh.triangles.each do |triangle|
+    java_signature 'int color(float, float, float)'
     fill(color(0, 25, 255 - 255 * triangle.normal.abs / maxn)) if @color
     begin_shape(POLYGON)
     triangle.each do |point|

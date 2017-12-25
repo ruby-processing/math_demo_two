@@ -1,6 +1,6 @@
 # draw module
 module Draw
-  include Processing::Proxy
+  include_package 'processing.core'
   def draw_point(point, thick = 2)
     ellipse(point.x, point.y, thick, thick)
   end
@@ -25,7 +25,7 @@ module Draw
     polygon.each do |point|
       vertex(point.x, point.y)
     end
-    hash.key?(:close) ? end_shape(hash[close]) : end_shape(CLOSE)
+    hash.key?(:close) ? end_shape(hash[close]) : end_shape(PConstants::CLOSE)
   end
 
   def draw_smooth_polygon(polygon, refine = 5, hash = {})
