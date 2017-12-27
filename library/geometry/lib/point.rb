@@ -1,4 +1,5 @@
 # Point class uses Vec2D for math when rquired
+require_relative 'vector'
 class Point
   include Comparable
 

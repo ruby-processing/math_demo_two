@@ -1,4 +1,3 @@
-require_relative 'vec2d'
 # NB: We cannot use Vector name because `matrix` module has Vector class
 class Vector2D
   def self.points(start, finish)

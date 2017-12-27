@@ -1,0 +1,4 @@
+#!/usr/bin/env jruby
+file = __FILE__
+require File.expand_path(File.dirname(file) + "/../graphics_test")
+GraphicsTest.new
