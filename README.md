@@ -6,4 +6,4 @@ jgem install propane
 jruby random-graphics
 ```
 
-I don't know whether it was Brandons or Jarek Rossignac idea to do the implementation in ruby-processing, but it is an interesting choice. Today many people rely on some version of John Lloyds Quickhull3D in java in processing sketches to create meshes. Such as [Lee Byron mesh processing](http://leebyron.com/mesh/) or [toxiclibs](http://toxiclibs.org/) by Karsten Schmidt. You can access toxiclibs in propane and JRubyArt by installing the [gem](http://ruby-processing.github.io/toxicgem/)
+I don't know whether it was Brandons or Jarek Rossignacs idea to do the implementation in ruby-processing, but it is an interesting choice. Today many people rely on some version of John Lloyds Quickhull3D in java in processing sketches to create meshes. Such as [Lee Byron mesh processing](http://leebyron.com/mesh/) or [toxiclibs](http://toxiclibs.org/) by Karsten Schmidt. You can access toxiclibs in propane and JRubyArt by installing the [gem](http://ruby-processing.github.io/toxicgem/).
