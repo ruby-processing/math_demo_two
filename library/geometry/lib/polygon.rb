@@ -1,6 +1,6 @@
 class Polygon
   include Enumerable
-  attr_accessor :vertices
+  attr_reader :vertices
 
   def initialize(*args)
     @vertices = args
