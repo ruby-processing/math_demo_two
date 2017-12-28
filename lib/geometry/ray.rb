@@ -1,0 +1,2 @@
+class Ray < Line
+end
