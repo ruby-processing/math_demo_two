@@ -6,6 +6,15 @@ jgem install propane
 jruby random-graphics
 ```
 
+alternatively create and install local gem
+
+```bash
+rake # builds gem runs tests
+jgem install math_demo_two-1.0-java.gem
+math_demo_two
+```
+
+
 I don't know whether it was Brandons or Jarek Rossignacs idea to do the implementation in ruby-processing, but it is an interesting choice. Today many people rely on some version of John Lloyds Quickhull3D in java in processing sketches to create meshes. Such as [Lee Byron mesh processing](http://leebyron.com/mesh/) or [toxiclibs](http://toxiclibs.org/) by Karsten Schmidt. You can access toxiclibs in propane and JRubyArt by installing the [gem](http://ruby-processing.github.io/toxicgem/).
 
 Another feature not available with early versions of ruby-processing is the `load_library` function that facilitates the use of ruby or java libraries in your sketches. Here we create the `geometry` library, so that we can separate the sketch file from the supporting files.
