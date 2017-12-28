@@ -342,4 +342,4 @@ class GraphicsTest < Propane::App
     file.close
   end
 end
-GraphicsTest.new
+# GraphicsTest.new # would load twice from gem
