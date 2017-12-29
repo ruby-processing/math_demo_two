@@ -18,4 +18,4 @@ It was Brandons idea to do the implementation in ruby-processing, Jarek having p
 
 Another feature not available with early versions of ruby-processing is the `load_library` function that facilitates the use of ruby or java libraries in your sketches. Here we create the `geometry` library, so that we can separate the sketch file from the supporting files.
 
-<a name="PVector">1</a>:PVector could not be used instead of Vector because it is confused as to whether it is 2D vector or a 3D vector see its [cross product implementation](https://www.processing.org/reference/PVector_cross_.html)
+<a name="PVector">1</a>:PVector could not be used instead of Vector because it is confused as to whether it is a 2D vector or a 3D vector see its [cross product implementation](https://www.processing.org/reference/PVector_cross_.html)
