@@ -3,7 +3,7 @@ Updated [random-graphics](https://github.com/TricksterGuy/random-graphics) by Tr
 
 ```bash
 jgem install propane
-jruby random-graphics
+jruby random-graphics.rb
 ```
 Or creating a gem and installing locally:-
 
