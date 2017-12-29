@@ -22,7 +22,7 @@ class GraphicsTest < Propane::App
     @color = false
     @mat = false
     frame_rate(64)
-    font = load_font(data_path('Courier-14.vlw'))
+    font = create_font('Courier', 14)
     text_font(font, 14)
     @polygon = PolygonFactory.n_gon(16, Point.new(400, 300), 250)
     @points = []
@@ -77,10 +77,6 @@ class GraphicsTest < Propane::App
       resample
     when 'I'
       @color = !@color
-    when 'W'
-      save_data
-    when 'L'
-      load_data
     when 'l'
       @corner = @mesh.left(@corner)
     when 'r'
@@ -148,8 +144,6 @@ class GraphicsTest < Propane::App
     scribe('To add/remove random points in the polygon press , or .')
     scribe('To Laplace smooth the points press S (not functional)')
     scribe('To bulge into 3D press b (not functional)')
-    scribe('To save the (bulged) mesh to a file press W')
-    scribe('To lo' + 'ad a (bulged) mesh from file press L') # ehh can't say load :/
     scribe('To animate the 3d mesh press a (not functional)')
     scribe('To compute the isolation measure press I')
     scribe('')
@@ -312,34 +306,6 @@ class GraphicsTest < Propane::App
       end_shape(CLOSE)
     end
     no_fill
-  end
-
-  def save_data
-    file = File.new(data_path('mesh.gph'), 'w')
-    #    Marshal.dump(polygon, file)
-    #    p polygon
-    #    Marshal.dump(@points, file)
-    #    p @points
-    #    Marshal.dump(@triangulation, file)
-    #    p @triangulation
-    #    Marshal.dump(@mesh, file)
-    #    p @mesh
-    Marshal.dump([polygon, @points, @triangulation, @mesh], file)
-    file.close
-  end
-
-  def load_data
-    file = File.new(data_path('mesh.gph'), 'rb')
-    #    polygon = Marshal.load(file)
-    #    p @polygon
-    #    @points = Marshal.load(file)
-    #    p @points
-    #    @triangulation = Marshal.load(file)
-    #    p @triangulation
-    #    @mesh = Marshal.load(file)
-    #    p @mesh
-    @polygon, @points, @triangulation, @mesh = Marshal.load(file)
-    file.close
   end
 end
 # GraphicsTest.new # would load twice from gem
