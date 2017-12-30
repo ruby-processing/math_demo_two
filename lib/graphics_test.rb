@@ -90,7 +90,7 @@ class GraphicsTest < Propane::App
     when 'o'
       @corner = @mesh.opposite(@corner)
     when 'q', 'Q'
-      Processing.app.exit
+      Propane.app.exit
     end
   end
 
