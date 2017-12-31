@@ -151,11 +151,7 @@ class Point
   end
 
   def to(other)
-    Vector2D.points(self, other)
-  end
-
-  def translation
-    Vec2D.new(x, y)
+    other - Vec2D.new(self)
   end
 
   def right_of?(a, b)

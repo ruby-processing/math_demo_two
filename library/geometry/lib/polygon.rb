@@ -68,7 +68,7 @@ class Polygon
   def area
     a = 0
     each_edge do |p1, p2|
-      a += p1.translation.cross(p2.translation)
+      a += Vec2D.new(p1).cross(Vec2D.new(p2))
     end
     a.abs / 2
   end
